@@ -1,40 +1,99 @@
-#flowers {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -1;
-}
 
-.flower {
-  position: absolute;
-  font-size: 2rem;
-  opacity: 0;
-  will-change: transform, opacity;
-  animation: bloom 2s ease-out forwards;
-}
-
-@keyframes bloom {
-  0%   { transform: scale(0); opacity: 0; }
-  50%  { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(1);   opacity: 1; }
-}
-
-#back-button {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.2rem;
-  padding: 0.6rem 1.2rem;
-  margin-top: 1.5rem;
-  border: none;
-  border-radius: 8px;
-  background: #ffb3c1;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-#back-button:hover {
-  background: #ff99b3;
-}
+   body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe6f2;                   /* pastel-pink */
+    font-family: 'Pacifico', cursive;       
+    color: #333;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  /* question text */
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* buttons wrapper */
+  .buttons {
+    position: relative;
+    height: 3rem;  
+  }
+  
+  /* shared button styles */
+  button {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+  }
+  
+  /* yes = pink */
+  #yes-button {
+    background: #ffb3c1;
+    color: #fff;
+    margin-right: 1rem;
+  }
+  #yes-button:hover {
+    background: #ff99b3;
+  }
+  
+  /* no = lavender */
+  #no-button {
+    background: #c1c1ff;
+    color: #fff;
+  }
+  #no-button:hover {
+    background: #a3a3ff;
+  }
+  
+  #flowers {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .flower {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: bloom 2s ease-out forwards;
+  }
+  
+  @keyframes bloom {
+    0%   { transform: scale(0); opacity: 0; }
+    50%  { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1);   opacity: 1; }
+  }
+  
+  #back-button {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #ffb3c1;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  #back-button:hover {
+    background: #ff99b3;
+  }
+  
