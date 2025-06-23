@@ -118,7 +118,17 @@
   }
   
   /* Flowers container */
-  .flowers { position: relative; transform: scale(0.9); z-index:0; }
+  .flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    transform: scale(0.9);
+    transform-origin: center bottom;
+    z-index: 0;
+  }
   
   .flower { position:absolute; bottom:10vmin; transform-origin:bottom center; z-index:10; }
   
@@ -138,9 +148,9 @@
   @keyframes grow-flower-tree { 0% { height:0; } }
   
   /* Individual flower instances */
-  .flower--1 { left:30vmin; animation:moving-flower-1 4s linear infinite; }
-  .flower--2 { left:50%; transform:rotate(20deg); animation:moving-flower-2 4s linear infinite; }
-  .flower--3 { left:70vmin; transform:rotate(-15deg); animation:moving-flower-3 4s linear infinite; }
+  .flower--1 { left: 25%; animation: moving-flower-1 4s linear infinite; }
+  .flower--2 { left: 50%; animation: moving-flower-2 4s linear infinite; }
+  .flower--3 { left: 75%; animation: moving-flower-3 4s linear infinite; }
   @keyframes moving-flower-1 { 0%,100%{transform:rotate(2deg);}50%{transform:rotate(-2deg);} }
   @keyframes moving-flower-2 { 0%,100%{transform:rotate(18deg);}50%{transform:rotate(14deg);} }
   @keyframes moving-flower-3 { 0%,100%{transform:rotate(-18deg);}50%{transform:rotate(-20deg) rotateY(-10deg);} }
