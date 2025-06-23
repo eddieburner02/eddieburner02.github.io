@@ -15,6 +15,7 @@ function moveButton() {
   noBtn.style.top      = `${y}px`;
 }
 
+noBtn.addEventListener('mouseover', moveButton);
 noBtn.addEventListener('click',      moveButton);
 
 yesBtn.addEventListener('click', () => {
