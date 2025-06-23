@@ -19,5 +19,5 @@ noBtn.addEventListener('mouseover', moveButton);
 noBtn.addEventListener('click',      moveButton);
 
 yesBtn.addEventListener('click', () => {
-  window.location.href = 'success.html';
+  window.location.href = 'flower.html';
 });
