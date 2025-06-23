@@ -1,14 +1,12 @@
-/* ——————————————————————————
-   Base “cutesy” layout & font
-   —————————————————————————— */
+
    body {
     margin: 0;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ffe6f2;
-    font-family: 'Pacifico', cursive;
+    background: #ffe6f2;                   /* pastel-pink */
+    font-family: 'Pacifico', cursive;       
     color: #333;
   }
   
@@ -23,7 +21,7 @@
   
   .buttons {
     position: relative;
-    height: 3rem;
+    height: 3rem; 
   }
   
   button {
@@ -37,6 +35,7 @@
     position: relative;
   }
   
+  /* yes = pink */
   #yes-button {
     background: #ffb3c1;
     color: #fff;
@@ -46,6 +45,7 @@
     background: #ff99b3;
   }
   
+  /* no = lavender */
   #no-button {
     background: #c1c1ff;
     color: #fff;
@@ -54,23 +54,33 @@
     background: #a3a3ff;
   }
   
-  /* ——————————————————————————
-     Success-page gradient
-     —————————————————————————— */
+
+  #bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+
   body.success {
     background: linear-gradient(-45deg,
-      #ffe6f2 0%,
-      #e6ffe6 25%,
-      #e6f2ff 50%,
-      #fff2e6 75%
+      #ffe6f2 0%,   /* pink */
+      #e6ffe6 25%,  /* mint */
+      #e6f2ff 50%,  /* sky */
+      #fff2e6 75%   /* peach */
     );
     background-size: 400% 400%;
     animation: gradientBG 20s ease infinite;
   }
+  
   @keyframes gradientBG {
-    0%   { background-position: 0% 50%; }
+    0%   { background-position:   0% 50%; }
     50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    100% { background-position:   0% 50%; }
   }
   
   body.success .container {
@@ -94,173 +104,3 @@
     background: #ff99b3;
   }
   
-  /* ——————————————————————————
-     CSS Blossoming Flowers Animation
-     Inspired by Yup Nguyen
-     —————————————————————————— */
-  *,*::before,*::after { padding:0; margin:0; box-sizing:border-box; }
-  :root { --dark-color: #000; }
-  body.success { perspective: 1000px; overflow: hidden; }
-  
-  /* Night background */
-  .night {
-    position: fixed; left:50%; top:0;
-    transform: translateX(-50%);
-    width:100%; height:100%; filter: blur(0.1vmin);
-    background-image:
-      radial-gradient(ellipse at top, transparent 0%, var(--dark-color)),
-      radial-gradient(ellipse at bottom, var(--dark-color), rgba(145,233,255,0.2)),
-      repeating-linear-gradient(220deg, black 0, black 19px, transparent 19px, transparent 22px),
-      repeating-linear-gradient(189deg, black 0, black 19px, transparent 19px, transparent 22px),
-      repeating-linear-gradient(148deg, black 0, black 19px, transparent 19px, transparent 22px),
-      linear-gradient(90deg, #00fffa, #f0f0f0);
-    z-index:0;
-  }
-  
-  /* Flowers container */
-  .flowers {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    transform: scale(0.9);
-    transform-origin: center bottom;
-    z-index: 0;
-  }
-  
-  .flower { position:absolute; bottom:10vmin; transform-origin:bottom center; z-index:10; }
-  
-  /* Petal line growth animations */
-  .flower__leafs { position:relative; animation:blooming-flower 2s backwards; }
-  @keyframes blooming-flower { 0% { transform: scale(0); } }
-  
-  /* Flower stems */
-  .flower__line {
-    height:55vmin; width:1.5vmin;
-    background-image:
-      linear-gradient(to left, rgba(0,0,0,0.2),transparent,rgba(255,255,255,0.2)),
-      linear-gradient(to top,transparent 10%,#14757a,#39c6d6);
-    box-shadow:inset 0 0 2px rgba(0,0,0,0.5);
-    animation:grow-flower-tree 4s backwards;
-  }
-  @keyframes grow-flower-tree { 0% { height:0; } }
-  
-  /* Individual flower instances */
-  .flower--1 { left: 25%; animation: moving-flower-1 4s linear infinite; }
-  .flower--2 { left: 50%; animation: moving-flower-2 4s linear infinite; }
-  .flower--3 { left: 75%; animation: moving-flower-3 4s linear infinite; }
-  @keyframes moving-flower-1 { 0%,100%{transform:rotate(2deg);}50%{transform:rotate(-2deg);} }
-  @keyframes moving-flower-2 { 0%,100%{transform:rotate(18deg);}50%{transform:rotate(14deg);} }
-  @keyframes moving-flower-3 { 0%,100%{transform:rotate(-18deg);}50%{transform:rotate(-20deg) rotateY(-10deg);} }
-  
-  /* Leaves blooming from stem */
-  .flower__line__leaf { position:absolute; --w:7vmin; --h:calc(var(--w)+2vmin);
-    top:20%; left:90%; width:var(--w); height:var(--h);
-    background-image: linear-gradient(to top,rgba(20,117,122,0.4),#39c6d6);
-    border-radius:var(--h) var(--h) 0 0; transform-origin:bottom center;
-  }
-  .flower__line__leaf--1 { animation:blooming-leaf-right 0.8s 1.6s backwards; }
-  .flower__line__leaf--2 { animation:blooming-leaf-right 0.8s 1.8s backwards; }
-  .flower__line__leaf--3 { animation:blooming-leaf-left 0.8s 1.4s backwards; }
-  .flower__line__leaf--4 { animation:blooming-leaf-left 0.8s 1.2s backwards; }
-  @keyframes blooming-leaf-right { 0% { transform-origin:left; transform:rotate(70deg) scale(0); } }
-  @keyframes blooming-leaf-left { 0% { transform-origin:right; transform:rotate(-70deg) scale(0); } }
-  
-  /* White center highlight */
-  .flower__white-circle { position:absolute; left:-3.5vmin; top:-3vmin;
-    width:9vmin; height:4vmin; border-radius:50%; background:#fff;
-  }
-  
-  /* Light sparkles */
-  .flower__light { position:absolute; bottom:0; width:1vmin; height:1vmin;
-    background:#fffb00; border-radius:50%; filter:blur(0.2vmin);
-    animation:light-ans 4s linear infinite backwards;
-  }
-  @keyframes light-ans {
-    0%,100%{opacity:0;} 25%{opacity:1;transform:translate(-2vmin,-5vmin);} 
-    50%{opacity:1;transform:translate(2vmin,-15vmin);} 75%{transform:translate(-2vmin,-20vmin);} }
-  .flower__light:nth-child(odd) { background:#23f0ff; }
-  
-  /* Pause animations until loaded */
-  .not-loaded * { animation-play-state: paused !important; }
-  
-  /* ——————————————————————————
-   Realistic CSS Flower Heads & Stems
-   —————————————————————————— */
-.flowers {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.flower {
-  position: absolute;
-  bottom: 15%;
-  width: 120px; height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* stem */
-.flower .stem {
-  width: 8px; height: 100px;
-  background: linear-gradient(to bottom, #9fd8d8, #075);
-  border-radius: 4px;
-}
-
-/* leaves halfway up */
-.flower .leaves {
-  position: absolute;
-  top: 50px;
-  width: 120px;
-  display: flex;
-  justify-content: space-between;
-}
-.flower .leaf {
-  width: 30px; height: 15px;
-  background: #5aa;
-  border-radius: 50%;
-  transform-origin: center center;
-  /* flip one leaf inward/outward */
-}
-.flower .leaf:nth-child(1) { transform: rotate( 30deg); }
-.flower .leaf:nth-child(2) { transform: rotate(-30deg); }
-
-/* flower head */
-.flower .head {
-  position: absolute;
-  bottom: 100px;
-  width: 120px; height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 5 petals around a center */
-.flower .petal {
-  position: absolute;
-  width: 50px; height: 25px;
-  background: #9fd8d8;
-  border-radius: 50%;
-  transform-origin: 50% 100%;
-}
-.flower .petal:nth-child(1) { transform: rotate( 90deg)  translateY(-40px); }
-.flower .petal:nth-child(2) { transform: rotate( 18deg)  translateY(-40px); }
-.flower .petal:nth-child(3) { transform: rotate(-54deg)  translateY(-40px); }
-.flower .petal:nth-child(4) { transform: rotate(162deg) translateY(-40px); }
-.flower .petal:nth-child(5) { transform: rotate(-126deg) translateY(-40px); }
-
-/* center disk */
-.flower .center {
-  position: absolute;
-  bottom: 120px;
-  width: 24px; height: 24px;
-  background: #f6fcd6;
-  border-radius: 50%;
-  box-shadow: 0 0 4px rgba(255,255,255,0.6);
-}
