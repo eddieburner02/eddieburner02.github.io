@@ -186,3 +186,81 @@
   /* Pause animations until loaded */
   .not-loaded * { animation-play-state: paused !important; }
   
+  /* ——————————————————————————
+   Realistic CSS Flower Heads & Stems
+   —————————————————————————— */
+.flowers {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flower {
+  position: absolute;
+  bottom: 15%;
+  width: 120px; height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* stem */
+.flower .stem {
+  width: 8px; height: 100px;
+  background: linear-gradient(to bottom, #9fd8d8, #075);
+  border-radius: 4px;
+}
+
+/* leaves halfway up */
+.flower .leaves {
+  position: absolute;
+  top: 50px;
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+.flower .leaf {
+  width: 30px; height: 15px;
+  background: #5aa;
+  border-radius: 50%;
+  transform-origin: center center;
+  /* flip one leaf inward/outward */
+}
+.flower .leaf:nth-child(1) { transform: rotate( 30deg); }
+.flower .leaf:nth-child(2) { transform: rotate(-30deg); }
+
+/* flower head */
+.flower .head {
+  position: absolute;
+  bottom: 100px;
+  width: 120px; height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 5 petals around a center */
+.flower .petal {
+  position: absolute;
+  width: 50px; height: 25px;
+  background: #9fd8d8;
+  border-radius: 50%;
+  transform-origin: 50% 100%;
+}
+.flower .petal:nth-child(1) { transform: rotate( 90deg)  translateY(-40px); }
+.flower .petal:nth-child(2) { transform: rotate( 18deg)  translateY(-40px); }
+.flower .petal:nth-child(3) { transform: rotate(-54deg)  translateY(-40px); }
+.flower .petal:nth-child(4) { transform: rotate(162deg) translateY(-40px); }
+.flower .petal:nth-child(5) { transform: rotate(-126deg) translateY(-40px); }
+
+/* center disk */
+.flower .center {
+  position: absolute;
+  bottom: 120px;
+  width: 24px; height: 24px;
+  background: #f6fcd6;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255,255,255,0.6);
+}
