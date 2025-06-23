@@ -4,14 +4,119 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yay!</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body class="success">
-  <canvas id="bgCanvas"></canvas>
+<body class="success not-loaded">
+  <div class="night"></div>
+  <div class="flowers">
+    <div class="flower flower--1">
+      <div class="flower__leafs flower__leafs--1">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__leaf flower__leaf--5"></div>
+        <div class="flower__leaf flower__leaf--6"></div>
+      </div>
+      <div class="flower__white-circle"></div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+        <div class="flower__line__leaf flower__line__leaf--5"></div>
+        <div class="flower__line__leaf flower__line__leaf--6"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--2">
+      <div class="flower__leafs flower__leafs--2">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+      </div>
+      <div class="flower__white-circle"></div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--3">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+      </div>
+      <div class="flower__white-circle"></div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <!-- Grass accents -->
+    <div class="flower__grass flower__grass--1"></div>
+    <div class="flower__grass flower__grass--2"></div>
+    <div class="flower__grass flower__grass--top"></div>
+
+    <!-- Long stems/grass -->
+    <div class="long-g long-g--0">
+      <div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:2.2s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:3.4s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+    </div>
+    <div class="long-g long-g--1">
+      <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:3.8s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:4s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--3"></div></div>
+    </div>
+    <div class="long-g long-g--2">
+      <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:2.8s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--3"></div></div>
+    </div>
+    <div class="long-g long-g--3">
+      <div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:2.8s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:3.8s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+    </div>
+    <div class="long-g long-g--4">
+      <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:3s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:2.4s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:2.6s"><div class="leaf leaf--3"></div></div>
+    </div>
+    <div class="long-g long-g--5">
+      <div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:3.8s"><div class="leaf leaf--3"></div></div>
+    </div>
+    <div class="long-g long-g--6">
+      <div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:3.4s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:4.8s"><div class="leaf leaf--3"></div></div>
+    </div>
+    <div class="long-g long-g--7">
+      <div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div>
+      <div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--1"></div></div>
+      <div class="grow-ans" style="--d:3.5s"><div class="leaf leaf--2"></div></div>
+      <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
+    </div>
+  </div>
 
   <div class="container">
     <h1>Yay!</h1>
@@ -20,68 +125,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
-    confetti({ particleCount: 200, spread: 70 });
-
-    const canvas = document.getElementById('bgCanvas');
-    const ctx    = canvas.getContext('2d');
-    function resize() {
-      canvas.width  = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    // store active blooms
-    const blooms = [];
-    function spawnBloom() {
-      blooms.push({
-        x:     Math.random() * canvas.width,
-        y:     Math.random() * canvas.height,
-        born:  performance.now(),
-        life:  2000 + Math.random() * 1000  
-      });
-    }
-    setInterval(spawnBloom, 400);
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const now = performance.now();
-
-      for (let i = blooms.length - 1; i >= 0; i--) {
-        const b = blooms[i];
-        const t = (now - b.born) / b.life;
-        if (t >= 1) {
-          blooms.splice(i, 1);
-          continue;
-        }
-        const scale = t;
-        ctx.save();
-        ctx.translate(b.x, b.y);
-        ctx.scale(scale, scale);
-
-        // draw petals
-        const petals = 6;
-        for (let p = 0; p < petals; p++) {
-          ctx.rotate((2 * Math.PI) / petals);
-          ctx.beginPath();
-          ctx.ellipse(0, 12, 6, 18, 0, 0, 2 * Math.PI);
-          ctx.fillStyle = `rgba(255,182,193,${1 - t})`;  
-          ctx.fill();
-        }
-
-        // draw center
-        ctx.beginPath();
-        ctx.arc(0, 0, 6, 0, 2 * Math.PI);
-        ctx.fillStyle = `rgba(255,223,0,${1 - t})`;      
-        ctx.fill();
-
-        ctx.restore();
-      }
-
-      requestAnimationFrame(draw);
-    }
-    draw();
-
+    window.onload = () => {
+      document.body.classList.remove("not-loaded");
+      confetti({ particleCount: 200, spread: 70 });
+    };
     document.getElementById('back-button')
       .addEventListener('click', () => window.location.href = 'index.html');
   </script>
