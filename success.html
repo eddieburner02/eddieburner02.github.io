@@ -4,10 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yay!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- flower container -->
+  <div id="flowers"></div>
+
+  <!-- main content -->
   <div class="container">
     <h1>Yay!</h1>
     <button id="back-button">Back</button>
@@ -16,6 +23,20 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
     confetti({ particleCount: 200, spread: 70 });
+
+    const flowerContainer = document.getElementById('flowers');
+    const emojis = ['🌸','🌹','🌺','💐'];
+    function spawnFlower() {
+      const f = document.createElement('div');
+      f.className = 'flower';
+      f.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+      f.style.left = Math.random() * 100 + '%';
+      f.style.top  = Math.random() * 100 + '%';
+      f.style.animationDuration = (1.5 + Math.random()) + 's';
+      flowerContainer.appendChild(f);
+      setTimeout(() => f.remove(), 5000);
+    }
+    setInterval(spawnFlower, 400);
 
     document.getElementById('back-button')
       .addEventListener('click', () => window.location.href = 'index.html');
