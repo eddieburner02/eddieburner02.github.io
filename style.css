@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe6f2;
+    font-family: 'Pacifico', cursive;
+    color: #333;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  /* question text */
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* buttons layout */
+  .buttons {
+    position: relative;
+    height: 3rem; 
+  }
+  
+  button {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+  }
+  
+  /* yes  */
+  #yes-button {
+    background: #ffb3c1;
+    color: #fff;
+    margin-right: 1rem;
+  }
+  #yes-button:hover {
+    background: #ff99b3;
+  }
+  
+  /* no */
+  #no-button {
+    background: #c1c1ff;
+    color: #fff;
+  }
+  #no-button:hover {
+    background: #a3a3ff;
+  }
+  
